@@ -1,12 +1,17 @@
+/* Display tabs in the top center with the #eee color  */
 .nav-tabs {
     display: flex;
     justify-content: center;
     background-color: #eee;
 }
+
+/* Tabs item text aligned to center and full-filled at the top*/
 .nav-tabs .nav-item {
     flex: 1;
     text-align: center;
 }
+
+/* Tabs item text aligned to center and full-filled at the top on hover changing color to white like the background */
 .nav-tabs .nav-item :hover {
     flex: 1;
     text-align: center;

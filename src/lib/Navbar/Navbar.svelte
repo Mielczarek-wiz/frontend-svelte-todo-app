@@ -1,10 +1,12 @@
 <script lang="ts">
   import "./Navbar.css"
 
+  // Information which tab is actually active
   export let active: number;
 
 </script>
 
+<!--Navbar for tabs-->
 <nav class="navbar navbar-fixed-top">
     <ul class="nav nav-tabs">
       <li class={active === 1 ? "nav-item active" : "nav-item"}>

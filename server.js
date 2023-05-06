@@ -50,7 +50,7 @@ app.get("/api/todos", (req, res) => {
 });
 
 app.get("/api/todos/:todo_id", (req, res) => {
-  // use mongoose to get all todos in the database
+  // use mongoose to get todos in the database with given id
   Todo.find(
     {
       _id: req.params.todo_id,
@@ -66,7 +66,7 @@ app.get("/api/todos/:todo_id", (req, res) => {
 
 // create todo and send back all todos after creation
 app.post("/api/todos", (req, res) => {
-  // create a todo, information comes from AJAX request from Angular
+  // create a todo, information comes from AXIOS request from Svelte
   Todo.create({
     text: req.body.text,
     done: false
@@ -88,7 +88,7 @@ app.post("/api/todos", (req, res) => {
 
 // app.put("/api/todos", function (req, res) {});
 app.patch("/api/todos/:todo_id", (req, res) => {
-
+  // use mongoose to find and update special todo and after retrive all todos in the database
   Todo.findOneAndUpdate(
     { _id: req.params.todo_id },
     { $set:{done: req.body.done} },
@@ -111,6 +111,7 @@ app.patch("/api/todos/:todo_id", (req, res) => {
 
 // delete a todo
 app.delete("/api/todos/:todo_id", (req, res) => {
+  // use mongoose to delete todo from the database
   Todo.deleteOne(
     {
       _id: req.params.todo_id,

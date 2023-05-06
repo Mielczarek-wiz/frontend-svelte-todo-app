@@ -6,8 +6,10 @@
     import { onMount } from "svelte";
     import Todos from "$lib/Todos/Todos.svelte";
 
+    // Done todos.
     let done: ITodos[] = [];
 
+    // When the component is mounted take the todo list and set it in done (after filtering).
     onMount(() => {
         const unsubscribe = todosStore.subscribe((value) => {
             done = value.filter((item) => item.done === true);
@@ -18,7 +20,9 @@
     });
 
 </script>
-  
+
+<!--Head of page-->
 <Navbar active={2}/>
 <Header len={done.length}/>
+<!--Todo list with done tasks-->
 <Todos todos={done} />

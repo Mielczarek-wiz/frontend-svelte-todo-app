@@ -1,0 +1,10 @@
+/* Styles for button (invisible) */
+button {
+    background-color: transparent;
+    border: 0;
+}
+/* When the task is done the text must be gray and with line-through */
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
