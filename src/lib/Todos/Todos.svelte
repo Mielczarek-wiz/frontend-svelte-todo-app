@@ -9,8 +9,12 @@
 <!--Show all the todos by using Todo component-->
 <main id="todo-list" class="row">
     <div class="col-sm-4 col-sm-offset-4">
-        {#each todos as todo}
-            <Todo todo={todo} />
-        {/each}
+        {#if todos.length === 0 }
+            <div class="text-center"> No elements to display.</div>
+        {:else}
+            {#each todos as todo}
+                <Todo todo={todo} />
+            {/each}
+        {/if}
     </div>
 </main>
