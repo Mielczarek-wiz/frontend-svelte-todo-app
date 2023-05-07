@@ -10,7 +10,7 @@
 <main id="todo-list" class="row">
     <div class="col-sm-4 col-sm-offset-4">
         {#if todos.length === 0 }
-            <div class="text-center"> No elements to display.</div>
+            <div class="text-center"> Brak elementów do wyświetlenia.</div>
         {:else}
             {#each todos as todo}
                 <Todo todo={todo} />

@@ -1,11 +1,9 @@
 <script lang="ts">
     import type { ITodo, ITodos } from '$lib/Models/models';
+    import { _callPost } from "../../api/api";
     import { form, field } from 'svelte-forms';
     import { required } from 'svelte-forms/validators';
     import { todosStore } from '../../store/store';
-
-    // Getting function call Post from parent.
-    export let callPost: (param: ITodo) => Promise<ITodos[]>;
 
     // Using svelte-forms to operate form. Text for task is required.
     const newTodo = field('newTodo', '', [required()]);
@@ -21,7 +19,7 @@
           const newTodoValue = {text: $newTodo.value} as ITodo;
 
           // Calling axios request from api file for adding new task.
-          const res = await callPost(newTodoValue);
+          const res = await _callPost(newTodoValue);
 
           // Setting new tasks to store.
           todosStore.set(res);
